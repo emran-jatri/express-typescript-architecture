@@ -17,12 +17,12 @@ const bootstrap = async () => {
 		dotenv.config();
 
 		// all middlewares
+		// app.set('trust proxy', true)
 		app.use(helmet());
 		app.use(json());
-		app.use(urlencoded());
+		app.use(urlencoded({extended: false}));
 		app.use(morgan("dev"));
 		app.use(cors());
-
 		// zgip compression
 		app.use(
 			compression({
