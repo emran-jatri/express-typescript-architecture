@@ -1,0 +1,36 @@
+{
+  "name": "express-typescript-architecture",
+  "version": "1.0.0",
+  "description": "Expressjs with TypeScript",
+  "main": "app.js",
+  "scripts": {
+    "start": "node dist/app.js",
+    "dev": "nodemon src/app.ts",
+    "build": "tsc -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emran-jatri/express-typescript-architecture.git"
+  },
+  "keywords": [
+    "expressjs",
+    "typescript",
+    "nodejs"
+  ],
+  "author": "Emran Ibn Shayed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emran-jatri/express-typescript-architecture/issues"
+  },
+  "homepage": "https://github.com/emran-jatri/express-typescript-architecture#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.32",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  }
+}
