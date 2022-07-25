@@ -11,10 +11,14 @@ import {router} from './router'
 const bootstrap = async () => {
 	try {
 		const app: Application = express()
+		
+		// dot env init
+		dotenv.config();
+
+
 		const port: string | number = process.env.PORT || 5000
 
 		// .env
-		dotenv.config();
 
 		// all middlewares
 		// app.set('trust proxy', true)
