@@ -1,4 +1,4 @@
-import express, { Application, json, Request, Response, urlencoded } from 'express'
+import express, { Application, ErrorRequestHandler, json, NextFunction, Request, Response, urlencoded } from 'express'
 import helmet from 'helmet'
 import cors from 'cors'
 import morgan from 'morgan'
@@ -6,6 +6,7 @@ import compression from 'compression'
 import dotenv from 'dotenv'
 
 import {router} from './router'
+import { commonMiddleware } from './middlewares/CommonMiddleware'
 
 
 const bootstrap = async () => {
@@ -44,10 +45,14 @@ const bootstrap = async () => {
 		// router
 		app.use('/api', router)
 
+		// common middlewares
+		app.use(commonMiddleware)
+
 		// 
 		await app.listen(port)
 		console.log(`Server running on http://localhost:${port}`);
 	} catch (error) {
+		console.log('Server has been stoppaged!');
 		process.exit(1)
 	}
 }

@@ -5,5 +5,5 @@ import { authController } from '../../controllers/auth'
 
 export const authRouter = Router()
 
-authRouter.get('/', authController.login)
+authRouter.get('/login', authController.login)
 
